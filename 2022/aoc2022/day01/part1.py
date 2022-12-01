@@ -11,20 +11,7 @@ INPUT_TXT = os.path.join(os.path.dirname(__file__), 'input.txt')
 
 
 def compute(s: str) -> int:
-    elves = []
-    temp = 0
-
-    lines = s.splitlines()
-    for line in lines:
-        if not line:
-            elves.append(temp)
-            temp = 0
-            continue
-
-        line = int(line.strip())
-        temp += line
-
-    return max(elves)
+    return max([sum([int(weight) for weight in elf.split("\n")]) for elf in s.strip().split("\n\n")])
 
 
 INPUT_S = '''\
@@ -43,7 +30,7 @@ INPUT_S = '''\
 
 10000
 '''
-EXPECTED = 1
+EXPECTED = 24000
 
 
 @pytest.mark.parametrize(

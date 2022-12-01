@@ -11,7 +11,21 @@ INPUT_TXT = os.path.join(os.path.dirname(__file__), 'input.txt')
 
 
 def compute(s: str) -> int:
-    return sum(list(sorted([sum([int(weight) for weight in elf.split("\n")]) for elf in s.strip().split("\n\n")], reverse=True))[:3])
+    elves = []
+    temp = 0
+
+    lines = s.strip().splitlines()
+    for line in lines:
+        if not line:
+            elves.append(temp)
+            temp = 0
+            continue
+
+        line = int(line.strip())
+        temp += line
+    elves.append(temp)
+
+    return sum(list(sorted(elves, reverse=True))[:3])
 
 
 INPUT_S = '''\

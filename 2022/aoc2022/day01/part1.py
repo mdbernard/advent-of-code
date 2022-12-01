@@ -11,7 +11,21 @@ INPUT_TXT = os.path.join(os.path.dirname(__file__), 'input.txt')
 
 
 def compute(s: str) -> int:
-    return max([sum([int(weight) for weight in elf.split("\n")]) for elf in s.strip().split("\n\n")])
+    elves = []
+    temp = 0
+
+    lines = s.strip().splitlines()
+    for line in lines:
+        if not line:
+            elves.append(temp)
+            temp = 0
+            continue
+
+        line = int(line.strip())
+        temp += line
+    elves.append(temp)
+
+    return max(elves)
 
 
 INPUT_S = '''\

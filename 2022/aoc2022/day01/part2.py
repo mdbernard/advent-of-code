@@ -24,7 +24,7 @@ def compute(s: str) -> int:
         line = int(line.strip())
         temp += line
 
-    return max(elves)
+    return sum(list(sorted(elves, reverse=True))[:3])
 
 
 INPUT_S = '''\
@@ -43,7 +43,7 @@ INPUT_S = '''\
 
 10000
 '''
-EXPECTED = 1
+EXPECTED = 41000
 
 
 @pytest.mark.parametrize(

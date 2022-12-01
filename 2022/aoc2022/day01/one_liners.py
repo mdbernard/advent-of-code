@@ -1,1 +1,1 @@
-print("Part 1:", max(weights := list(map(lambda elf: sum(map(int, elf.split("\n"))), open("input.txt").read().strip().split("\n\n")))), "\nPart 2:", sum(sorted(weights)[-3:]))
+print(max(w:=sorted(map(lambda e:sum(map(int,e.split())),open("i").read().split("\n\n")))[-3:]),sum(w))

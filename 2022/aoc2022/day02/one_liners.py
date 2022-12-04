@@ -1,2 +1,2 @@
-print("Part 1:", sum(map(lambda choices: {"X": {"A": 4, "B": 1, "C": 7}, "Y": {"A": 8, "B": 5, "C": 2}, "Z": {"A": 3, "B": 9, "C": 6}}[choices.strip().split()[1]][choices.strip().split()[0]], open("input.txt").read().strip().split("\n"))))
-print("Part 2:", sum(map(lambda choices: {"X": {"A": 3, "B": 1, "C": 2}, "Y": {"A": 4, "B": 5, "C": 6}, "Z": {"A": 8, "B": 9, "C": 7}}[choices.strip().split()[1]][choices.strip().split()[0]], open("input.txt").read().strip().split("\n"))))
+print("Part 1:", sum(map(lambda choices: {"X": {"A": 4, "B": 1, "C": 7}, "Y": {"A": 8, "B": 5, "C": 2}, "Z": {"A": 3, "B": 9, "C": 6}}[choices.strip().split()[1]][choices.strip().split()[0]], data := open("input.txt").read().strip().split("\n"))))
+print("Part 2:", sum(map(lambda choices: {"X": {"A": 3, "B": 1, "C": 2}, "Y": {"A": 4, "B": 5, "C": 6}, "Z": {"A": 8, "B": 9, "C": 7}}[choices.strip().split()[1]][choices.strip().split()[0]], data)))
